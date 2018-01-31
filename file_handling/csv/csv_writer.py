@@ -43,4 +43,4 @@ if __name__ == '__main__':
     path = "output.csv"
     dict_path = "dict_output.csv"
     csv_writer(data, path)
-    csv_dict_writer(my_list, dict_path, fieldnames, )
+    csv_dict_writer(my_list, dict_path, fieldnames)
