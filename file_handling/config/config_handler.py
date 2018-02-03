@@ -87,6 +87,19 @@ def get_setting(path, section, setting):
     return value
 
 
+def interpolation_demo(path):
+    if not os.path.exists(path):
+        create_config(path)
+
+    config = configparser.ConfigParser()
+    config.read(path)
+
+    print(config.get("Settings", "font_info"))
+
+    print(config.get("Settings", "font_info",
+                     vars={"font": "Arial", "font_size": "100"}))
+
+
 def update_setting(path, section, setting, value):
     """
     Update a setting.
@@ -104,9 +117,4 @@ def update_setting(path, section, setting, value):
 
 if __name__ == "__main__":
     path = "settings.ini"
-    font = get_setting(path, "Settings", "font")
-    font_size = get_setting(path, "Settings", "font_size")
-
-    update_setting(path, "Settings", "font_size", "12")
-
-    delete_setting(path, "Settings", "font_style")
+    interpolation_demo(path)
