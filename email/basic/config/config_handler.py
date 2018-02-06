@@ -72,7 +72,7 @@ def get_config(path):
 
 def get_setting(path, section, setting):
     """
-    Return value of a given setting.
+    Print out a setting.
     :param path: File path to search for the configuration file.
     :param section: Name of the section heading in the config file.
     :param setting: Name of the setting to check.
@@ -80,6 +80,10 @@ def get_setting(path, section, setting):
     """
     config = get_config(path)
     value = config.get(section, setting)
+    msg = "{section} {setting} is {value}".format(
+        section=section, setting=setting, value=value
+    )
+    print(msg)
     return value
 
 

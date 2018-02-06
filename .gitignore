@@ -102,5 +102,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-.gitignore
 .idea/
+/email/basic/config/settings.ini
